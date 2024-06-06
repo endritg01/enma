@@ -8,24 +8,38 @@ function scrollToElement(elementSelector, instance = 0) {
     }
 }
 
+const link = document.getElementById("link");
 const link1 = document.getElementById("link1");
 const link2 = document.getElementById("link2");
 const link3 = document.getElementById("link3");
 
-link1.addEventListener('click', () => {
-    scrollToElement('.header');
+link.addEventListener('click', () => {
+  window.location.href = 'index.html';
 });
 
-link2.addEventListener('click', () => {
-    // Scroll to the second element with "header" class
-    scrollToElement('.header', 1);
+link1.addEventListener('click', () => {
+  window.location.href = 'index.html#scrollToSolutions'; // Navigate to index.html with a parameter
+  scrollToElement('.header');
 });
+
+// link2.addEventListener('click', () => {
+//     // Scroll to the second element with "header" class
+//     scrollToElement('.header', 1);
+// });
 
 link3.addEventListener('click', () => {
-    scrollToElement('.header', 2);
+  window.location.href = 'index.html#scrollToHeader'; // Navigate to index.html with a parameter
+  
+  scrollToElement('.header',1);
 });
-
-
+window.onload = function() {
+  if(window.location.hash === '#scrollToHeader') {
+    scrollToElement('.header', 1); // Scroll to the .header element
+  }
+  if(window.location.hash === '#scrollToSolutions') {
+    scrollToElement('.header'); // Scroll to the .header element
+  }
+};
 
 
 var pow = Math.pow,
