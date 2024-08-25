@@ -10,6 +10,7 @@ function scrollToElement(elementSelector, instance = 0) {
 
 const link = document.getElementById("link");
 const link1 = document.getElementById("link1");
+const link4 = document.getElementById("link4");
 const link2 = document.getElementById("link2");
 const link3 = document.getElementById("link3");
 
@@ -19,6 +20,11 @@ link.addEventListener('click', () => {
 
 link1.addEventListener('click', () => {
   window.location.href = 'index.html#scrollToSolutions'; // Navigate to index.html with a parameter
+  scrollToElement('.header',1);
+});
+
+link4.addEventListener('click', () => {
+  window.location.href = 'index.html#scrollToOneSuite'; // Navigate to index.html with a parameter
   scrollToElement('.header');
 });
 
@@ -30,13 +36,16 @@ link1.addEventListener('click', () => {
 link3.addEventListener('click', () => {
   window.location.href = 'index.html#scrollToHeader'; // Navigate to index.html with a parameter
   
-  scrollToElement('.header',1);
+  scrollToElement('.header',2);
 });
 window.onload = function() {
   if(window.location.hash === '#scrollToHeader') {
-    scrollToElement('.header', 1); // Scroll to the .header element
+    scrollToElement('.header', 2); // Scroll to the .header element
   }
   if(window.location.hash === '#scrollToSolutions') {
+    scrollToElement('.header',1); // Scroll to the .header element
+  }
+  if(window.location.hash === '#scrollToOneSuite') {
     scrollToElement('.header'); // Scroll to the .header element
   }
 };

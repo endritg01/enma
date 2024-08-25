@@ -34,7 +34,7 @@ canvas {
 body{
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
-    background-color: whitesmoke;
+    background-color: #F5F7F8;
     --card-background-color: rgba(255, 255, 255, 0.015);
     --card-border-color: rgba(255, 255, 255, 0.1);
     --card-box-shadow-1: rgba(0, 0, 0, 0.05);
@@ -81,7 +81,7 @@ body{
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(2, 80vh);
+    grid-template-columns: repeat(2, 60vh);
     grid-gap: 32px;
     margin-top: 8%;
     position: relative;
@@ -96,7 +96,7 @@ body{
     margin-top: 8%;
     position: relative;
     z-index: 1;
-    height: 400px;
+    height: 200px;
     margin-bottom: 5%;
 }
 .card {
@@ -804,6 +804,9 @@ footer .column > a:hover{
 }
 
 @media (width < 900px){
+    .onesuite{
+        width:100% !important;
+    }
     .nav-links{
         display: none;
     }
@@ -826,10 +829,11 @@ footer .column > a:hover{
         display: none !important;
     }
     .grid {
-        grid-template-columns: repeat(1, 350px);
+        grid-template-columns: repeat(1, 325px);
     }
     .grid1 {
-        grid-template-columns: repeat(1, 350px);
+        grid-template-columns: repeat(1, 325px);
+        margin-bottom: 100px;
     }
 }
 
