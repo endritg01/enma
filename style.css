@@ -81,7 +81,7 @@ body{
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(2, 60vh);
+    grid-template-columns: repeat(1, 100%);
     grid-gap: 32px;
     margin-top: 8%;
     position: relative;
@@ -147,7 +147,7 @@ body{
         margin: 12px 0 4px 0;
         font-family: inherit;
         font-weight: 600;
-        font-size: 20px;
+        font-size: 30px;
         line-height: 2;
         color: #0e4637;
     }
@@ -166,6 +166,7 @@ body{
         display: inline-block; /* Ensure it's inline-block for clickable area */
         pointer-events: auto; /* Ensure pointer events are enabled */
         cursor: pointer;
+        
     }
     .shine {
         border-radius: inherit;
