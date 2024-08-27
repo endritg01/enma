@@ -544,8 +544,28 @@ nav{
     margin: auto;
     padding: 5rem 2rem;
     margin-top: 2%;
-    
 }
+.containerOne{
+    max-width: 1200px;
+    margin: auto;
+    padding: 5rem 2rem;
+}
+
+.containeronetext {
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    justify-content: space-between; /* Space between the text and image */
+    gap: 20px; /* Optional: Add space between text and image */
+}
+
+.textone {
+    flex: 1; /* Allows the text section to take up available space */
+}
+
+.onesuiteimg {
+    max-width: 70%; /* Limit the image width to prevent it from being too large */
+}
+
 
 .container{
     max-width: 1200px;
@@ -823,6 +843,16 @@ footer .column > a:hover{
 }
 
 @media (width < 900px){
+    
+    .containeronetext {
+        display: block;
+        align-items: center; /* Vertically center the content */
+        justify-content: space-between; /* Space between the text and image */
+        gap: 20px; /* Optional: Add space between text and image */
+    }
+    .onesuiteimg {
+        max-width: 100% !important; /* Limit the image width to prevent it from being too large */
+    }
     .onesuite{
         width:100% !important;
     }
@@ -860,7 +890,16 @@ footer .column > a:hover{
 }
 
 @media (width < 600px){
-    
+    .containeronetext {
+        display: block;
+        align-items: center; /* Vertically center the content */
+        justify-content: space-between; /* Space between the text and image */
+        gap: 20px; /* Optional: Add space between text and image */
+    }
+    .onesuiteimg {
+        width: 100% !important;
+        max-width: 100% !important; /* Limit the image width to prevent it from being too large */
+    }
     canvas {
         display: none !important;
     }
