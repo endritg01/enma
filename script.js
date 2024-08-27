@@ -1,10 +1,18 @@
-function scrollToElement(elementSelector, instance = 0) {
+function scrollToElement(elementSelector, instance = 0,offset = 0) {
     // Select all elements that match the given selector
     const elements = document.querySelectorAll(elementSelector);
     // Check if there are elements matching the selector and if the requested instance exists
     if (elements.length > instance) {
-        // Scroll to the specified instance of the element
-        elements[instance].scrollIntoView({ behavior: 'smooth' });
+        const element = elements[instance];
+        // Calculate the position of the element and apply the offset
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition + offset;
+
+        // Scroll to the calculated position with smooth behavior
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
     }
 }
 
@@ -20,12 +28,12 @@ link.addEventListener('click', () => {
 
 link1.addEventListener('click', () => {
   window.location.href = 'index.html#scrollToSolutions'; // Navigate to index.html with a parameter
-  scrollToElement('.header',1);
+  scrollToElement('.header',1,-230);
 });
 
 link4.addEventListener('click', () => {
   window.location.href = 'index.html#scrollToOneSuite'; // Navigate to index.html with a parameter
-  scrollToElement('.header');
+  scrollToElement('.header',0,-230);
 });
 
 // link2.addEventListener('click', () => {
@@ -36,17 +44,17 @@ link4.addEventListener('click', () => {
 link3.addEventListener('click', () => {
   window.location.href = 'index.html#scrollToHeader'; // Navigate to index.html with a parameter
   
-  scrollToElement('.header',2);
+  scrollToElement('.header',2,-230);
 });
 window.onload = function() {
   if(window.location.hash === '#scrollToHeader') {
-    scrollToElement('.header', 2); // Scroll to the .header element
+    scrollToElement('.header', 2,-230); // Scroll to the .header element
   }
   if(window.location.hash === '#scrollToSolutions') {
-    scrollToElement('.header',1); // Scroll to the .header element
+    scrollToElement('.header',1,-230); // Scroll to the .header element
   }
   if(window.location.hash === '#scrollToOneSuite') {
-    scrollToElement('.header'); // Scroll to the .header element
+    scrollToElement('.header',0,-230); // Scroll to the .header element
   }
 };
 
@@ -510,3 +518,5 @@ document.querySelector(".carousel").addEventListener("mouseover", function() {
 document.querySelector(".carousel").addEventListener("mouseout", function() {
     slideInterval = setInterval(changeSlide, 5000);
 });
+
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fade-In on Scroll</title>
+  <style>
+    /* Add your CSS here */
+    .container {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .container.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <section class="container">
+    <h2 class="header">ENMA's OneSuite</h2>
+    <p style="margin-bottom: 2rem;color: #0e4637;text-align: center;">
+      Control and Manage your Servers with ENMA's OneSuite.
+    </p>
+    <img class="onesuite" src="onesuite.svg" style="width: 100%;">
+  </section>
+
+  <!-- Include jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+  <!-- Include your custom JavaScript file -->
+  <script src="scrollFade.js"></script>
+  
+</body>
+</html>
